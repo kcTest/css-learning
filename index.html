@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        测试菜单
+    </title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            border: 1px solid #ffaa1a;
+            height: 1200px;
+            margin: 10px;
+        }
+
+        #main a:hover {
+            background-color: #ffaa1a
+        }
+
+        #sidebar {
+            background: #25a146;
+            width: 15%;
+            height: 100%;
+            float: left;
+            margin-right: 10px;
+        }
+
+        #sidebar a {
+            height: 35px;
+            line-height: 35px;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        #r {
+            width: 84%;
+            height: 100%;
+            float: left;
+        }
+
+        #rtop {
+            background: #f1f213;
+            height: 20%;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        #rtop a {
+            margin: 20px;
+            height: 35px;
+            line-height: 35px;
+            color: white;
+            text-decoration: none;
+        }
+
+        #rbot {
+            position: relative;
+            background: #564933;
+            height: 79%;
+            margin-top: 10px;
+        }
+
+        #rbot a {
+            height: 35px;
+            line-height: 35px;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        #exp {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid skyblue;
+            border-radius: 25px;
+            top: 15%;
+            left: 25%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: transform 2s linear;
+            transform-origin: center center;
+        }
+
+        #exp:hover {
+            transform: translate(-50%, -50%) rotate(405deg) scale(1.5, 1.5);
+        }
+
+        #ani {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background: red;
+            top: 20%;
+            right: 10%;
+
+            animation-name: myani;
+            animation-duration: 4s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+            /*animation-direction:alternate;*/
+            animation-fill-mode: forwards;
+        }
+
+        #ani:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes myani {
+            0% {
+            }
+
+            25% {
+                transform: translateX(100px);
+            }
+
+            50% {
+                transform: translateX(100px) translateY(100px);
+            }
+            75% {
+                transform: translateX(0px) translateY(100px);
+            }
+            100% {
+            }
+        }
+
+        #city {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid yellow;
+            top: 25%;
+            left: 5%;
+            background: rgba(3, 3, 3, 0.3);
+        }
+
+
+        #dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #09f;
+            border-radius: 50%;
+        }
+
+        div[id^='circle'] {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            box-shadow: 0 0 12px skyblue;
+        }
+
+        #circle1 {
+            animation: circle 1.2s linear 0s infinite;
+        }
+
+        #circle2 {
+            animation: circle 1.2s linear 0.4s infinite;
+        }
+
+        #circle3 {
+            animation: circle 1.2s linear 0.8s infinite;
+        }
+
+
+        @keyframes circle {
+
+            0% {
+            }
+
+            55% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+                width: 40px;
+                height: 40px;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%);
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+
+        #fan {
+            position: absolute;
+            top: 20%;
+            left: 40%;
+            width: 200px;
+            height: 200px;
+            background: gray;
+            transform-style: preserve-3d;
+            transition: all 0.5s;
+        }
+
+        #fan:hover {
+            transform: rotateX(90deg);
+        }
+
+        #front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #00aeec;
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+            color: white;
+            z-index: 1;
+            transform: translateZ(100px);
+
+        }
+
+        #bottom {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: purple;
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+            color: white;
+            transform: translateY(100px) rotateX(-90deg);
+        }
+
+        #muma {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            width: 80%;
+            height: 30%;
+            transform: translate(-50%, -50%);
+            background: azure;
+            perspective: 666px;
+        }
+
+        #n0 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 50%;
+            transform: translate(-50%, -50%);
+            background: transparent;
+            transform-style: preserve-3d;
+            animation: xzmm 10s linear infinite;
+        }
+
+        #n0:hover {
+            animation-play-state: paused;
+        }
+
+        #ncenter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 200px;
+            background-image: url("imgs/A.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+
+        #n1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateZ(200px);
+            width: 220px;
+            height: 100px;
+            background-image: url("imgs/B.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        #n2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translate3d(180px, 0px, -100px) rotateY(120deg);
+            width: 220px;
+            height: 100px;
+            background-image: url("imgs/C.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        #n22 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translate3d(180px, 0px, 100px) rotateY(-120deg);
+            width: 220px;
+            height: 100px;
+            background-image: url("imgs/C.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        #n3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateZ(-200px);
+            width: 220px;
+            height: 100px;
+            background-image: url("imgs/D.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        #n4 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translate3d(-180px, 0px, -100px) rotateY(-120deg);
+            width: 220px;
+            height: 100px;
+            background-image: url("imgs/E.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        #n44 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translate3d(-180px, 0px, 100px) rotateY(120deg);
+            width: 220px;
+            height: 100px;
+            background-image: url("imgs/E.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        @keyframes xzmm {
+            0% {
+                transform: translate(-50%, -50%)
+            }
+            100% {
+                transform: translate(-50%, -50%) rotateY(360deg);
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div id='main'>
+
+    <div id='sidebar'>
+        <a href='#'> 菜单一 </a>
+        <a href='#'> 菜单二 </a>
+        <a href='#'> 菜单三 </a>
+        <a href='#'> 菜单四 </a>
+    </div>
+
+    <div id='r'>
+
+        <div id='rtop'>
+            <a href='#'> 菜单一 </a>
+            <a href='#'> 菜单二 </a>
+            <a href='#'> 菜单三 </a>
+            <a href='#'> 菜单四 </a>
+
+        </div>
+
+        <div id='rbot'>
+
+            <div id='exp'>
+            </div>
+
+            <div id='ani'>
+            </div>
+
+            <div id='city'>
+
+                <div id='dot'>
+                </div>
+                <div id='circle1'>
+                </div>
+                <div id='circle2'>
+                </div>
+                <div id='circle3'>
+                </div>
+            </div>
+
+            <div id='fan'>
+
+                <div id='front'>
+                    前面的文字
+                </div>
+                <div id='bottom'>
+                    下面的文字
+                </div>
+
+            </div>
+
+            <div id="muma">
+                <div id="n0">
+                    <div id="ncenter"></div>
+
+                    <div id="n1"></div>
+                    <div id="n2"></div>
+                    <div id="n22"></div>
+                    <div id="n3"></div>
+                    <div id="n4"></div>
+                    <div id="n44"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
